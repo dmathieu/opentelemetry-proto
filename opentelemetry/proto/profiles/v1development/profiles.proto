@@ -95,26 +95,26 @@ option go_package = "go.opentelemetry.io/proto/otlp/profiles/v1development";
 message ProfilesReferenceTables {
   // Mappings from address ranges to the image/binary/library mapped
   // into that address range referenced by locations via Location.mapping_index.
-  repeated Mapping mapping_table = 2;
+  repeated Mapping mapping_table = 1;
 
   // Locations referenced by samples via Profile.location_indices.
-  repeated Location location_table = 3;
+  repeated Location location_table = 2;
 
   // Functions referenced by locations via Line.function_index.
-  repeated Function function_table = 4;
+  repeated Function function_table = 3;
 
   // Links referenced by samples via Sample.link_index.
-  repeated Link link_table = 5;
+  repeated Link link_table = 4;
 
   // A common table for strings referenced by various messages.
   // string_table[0] must always be "".
-  repeated string string_table = 6;
+  repeated string string_table = 5;
 
   // A common table for attributes referenced by various messages.
-  repeated opentelemetry.proto.common.v1.KeyValue attribute_table = 7;
+  repeated opentelemetry.proto.common.v1.KeyValue attribute_table = 6;
 
   // Represents a mapping between Attribute Keys and Units.
-  repeated AttributeUnit attribute_units = 8;
+  repeated AttributeUnit attribute_units = 7;
 }
 
 // ProfilesData represents the profiles data that can be stored in persistent storage,
